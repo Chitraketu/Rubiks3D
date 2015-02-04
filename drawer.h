@@ -1,13 +1,10 @@
 #ifndef DRAWER_H
 #define DRAWER_H 
 
-#include<vector>
-#include<iostream>
 
 #include "vec3f.h"
 #include "GlActivity.h"
 #include "matrix.h"
-#include "scanLinde.h"
 
 using namespace GlActivities;
 using namespace scan;
@@ -16,7 +13,6 @@ using namespace std;
 class drawer:public GlActivity{
 private:
     Matrices *matrix;
-    vector<edge*>Edges;
 
 
 public:
