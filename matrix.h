@@ -23,6 +23,7 @@ public:
      */
 
     Matrices(int r,int c,bool ch=true);
+    Matrices(){}
     
     /*this is the internal 
      * class for the

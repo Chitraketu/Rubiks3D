@@ -27,7 +27,9 @@ namespace GlActivities {
 	glLoadIdentity();
     }
 
-    void GlActivity::idle(){}
+    void GlActivity::idle(){
+	    glutPostRedisplay();
+    }
 
     void GlActivity::setInstance(){
         instance  = this;
@@ -42,17 +44,19 @@ namespace GlActivities {
 	glutCreateWindow("chitraketu");
 	glutDisplayFunc(displayWrapper);
 	init();
-	glutIdleFunc(idleWrapper);
+
+//glutPostRedisplay();	glutIdleFunc(idleWrapper);
 	glutReshapeFunc(reshapeWrapper);
         glutKeyboardFunc(keydownWrapper);
 	glutKeyboardUpFunc(keyupWrapper);	
+	glutIdleFunc(idleWrapper);
 	glutMainLoop();
     }
 
 
     void GlActivity::init(){
-       glClearColor(0.0, 0.0, 0.0, 0.0);	
-       glClear(GL_COLOR_BUFFER_BIT);
+      // glClearColor(0.h, 0.0, 0.0, 1.0);	
+      // glClear(GL_COLOR_BUFFER_BIT);
     }
 
     void GlActivity::displayWrapper(){
